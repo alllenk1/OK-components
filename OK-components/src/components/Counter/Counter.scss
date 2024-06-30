@@ -1,0 +1,114 @@
+.Counter {
+    position: relative;
+
+    width: 12px;
+    height: 12px;
+
+    color: #ffffff;
+    background-color: #2fb675;
+    border-radius: 50%;
+
+    .Counter-quantity {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        margin: 0;
+    }
+
+    .pulse {
+        background-color: #2fb675;
+    }
+}
+
+.Counter_m-content {
+    padding: 0 2px;
+
+    border-radius: 13px;
+}
+
+.Counter_l-content {
+    padding: 0 5px;
+
+    border-radius: 13px;
+}
+
+.Counter_type_secondary {
+    color: #2e2f33;
+    background: #8366561f;
+
+    .pulse {
+        background-color: #8366561f;
+    }
+}
+
+.Counter_size {
+    &_8 {
+        width: 8px;
+        height: 8px;
+    }
+
+    &_16 {
+        width: 16px;
+        height: 16px;
+
+        font:
+            800 11px/1.2 Roboto,
+            sans-serif;
+    }
+
+    &_20 {
+        width: 20px;
+        height: 20px;
+
+        font:
+            500 13px/1.2 Roboto,
+            sans-serif;
+    }
+
+    &_24 {
+        width: 24px;
+        height: 24px;
+
+        font:
+            500 15px/1.2 Roboto,
+            sans-serif;
+    }
+}
+
+.Counter_pulse_true {
+    .counter-dot,
+    .pulse {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .pulse {
+        animation-name: counter-pulse;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+
+    .pulse.two {
+        animation-delay: 0.25s;
+    }
+}
+
+@keyframes counter-pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
