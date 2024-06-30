@@ -2,18 +2,11 @@ import React, { useState } from 'react';
 
 import { cnButton } from './Button.classname';
 import { ProgressIndicator } from '../ProgressIndicator/ProgressIndicator.tsx';
+import { Counter } from '../Counter/Counter.tsx';
+import { CounterSize } from "../Counter/types";
 
 import './Button.scss';
-import { Counter } from '../Counter/Counter.tsx';
-
-type ButtonProps = {
-    text?: string;
-    type?: 'primary' | 'secondary';
-    size?: '28' | '36' | '56';
-    state?: 'enabled' | 'loading' | 'disabled';
-    quantityCounter?: string;
-    onClick?: () => void;
-};
+import { ButtonProps } from "./types";
 
 export const Button = ({
     text,
@@ -25,7 +18,7 @@ export const Button = ({
 }: ButtonProps) => {
     const [isFocused, setIsFocused] = useState(false);
 
-    let counterSize: '16' | '20' | '24' = '20';
+    let counterSize: CounterSize = '20';
 
     if (size === '28') {
         counterSize = '16';

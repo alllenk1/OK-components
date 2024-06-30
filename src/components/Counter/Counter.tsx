@@ -2,20 +2,12 @@ import React from 'react';
 
 import { cnCounter } from './Counter.classname';
 
+import {CounterProps} from "./types";
 import './Counter.scss';
-
-type CounterProps = {
-    type?: 'primary' | 'secondary';
-    size?: '8' | '12' | '16' | '20' | '24';
-    stroke?: boolean;
-    quantity?: string;
-    pulse?: boolean;
-};
 
 export const Counter = ({
     type = 'primary',
     size = '8',
-    stroke = true,
     quantity,
     pulse = false,
 }: CounterProps) => (
@@ -23,7 +15,6 @@ export const Counter = ({
         className={cnCounter({
             type,
             size,
-            stroke,
             pulse,
             'm-content': quantity?.length > 1,
             'l-content': quantity?.length > 2,
