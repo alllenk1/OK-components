@@ -9,6 +9,7 @@ function App() {
 	return (
 		<>
 			<Counter size="12" pulse="true" />
+			<Button text="Что сделать" />
 		</>
 	);
 }
